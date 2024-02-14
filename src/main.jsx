@@ -6,11 +6,18 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Layout from './components/Layout.jsx'
+import Index from './pages/Index.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Index />
+      },
+    ]
   }
 ])
 
