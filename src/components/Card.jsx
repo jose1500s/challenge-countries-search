@@ -1,5 +1,5 @@
 export default function Card({ countries }) {
-    console.log(countries)
+    
     return (
         <div className="w-72 h-80 shadow-md py-2">
             <header className="h-1/2 w-full">
