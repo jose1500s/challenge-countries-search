@@ -1,9 +1,10 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 export default function Card({ countries }) {
     
     return (
         <div className="w-72 h-80 shadow-md py-2">
             <header className="h-1/2 w-full">
-                <img
+                <LazyLoadImage 
                     className="h-full w-full object-cover"
                     src={countries.flags.svg}
                     alt={countries.flags.alt} />

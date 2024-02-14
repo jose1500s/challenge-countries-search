@@ -3,12 +3,11 @@ import Card from "../components/Card"
 import InputSearch from '../components/InputSearch'
 
 export default function Index() {
-
+    
     const [countriesData, setCountriesData] = useState([])
-    const [loading, setLoading] = useState(false)
     const [search, setSearch] = useState('')
-
-
+    const [filteredCountries, setFilteredCountries] = useState(countriesData)
+    
     useEffect(() => {
         fetch('https://restcountries.com/v3.1/all')
             .then((response) => response.json())
@@ -18,16 +17,20 @@ export default function Index() {
             })
     }, [])
 
+    useEffect(() => {
+        setFilteredCountries(countriesData);
+    }, [countriesData]);
 
     return (
         <>
             <InputSearch
                 search={search}
                 setSearch={setSearch}
-                setCountriesData={setCountriesData}
+                setFilteredCountries={setFilteredCountries}
+                countriesData={countriesData}
             />
             <div className="flex flex-wrap justify-center items-center gap-4 mt-10">
-                {countriesData.length > 0 && countriesData.map((country) => (
+                {filteredCountries.length > 0 && filteredCountries.map((country) => (
                     <Card key={country.name.common} countries={country} />
                 ))}
             </div>

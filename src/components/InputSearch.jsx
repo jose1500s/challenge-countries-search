@@ -1,25 +1,13 @@
-import { useRef } from "react"
+export default function InputSearch({ search, setSearch, setFilteredCountries, countriesData }) {
 
-export default function InputSearch({ search, setSearch, setCountriesData}) {
-    
-    const searchRef = useRef()
+    const handleInputChange = (e) => {
+        const searchTerm = e.target.value;
+        setSearch(searchTerm)
+        const filteredItems = countriesData.filter((country) =>
+            country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+        );
 
-    const handleChange = (e) => {
-        setSearch(e.target.value)
-        filterCountries(search)
-    }
-
-    const filterCountries = (countryName) => {
-        searchRef.current && clearTimeout(searchRef.current)
-        
-        searchRef.current = setTimeout(() => {
-            fetch(`https://restcountries.com/v3.1/name/${countryName}`)
-            .then((response) => response.json())
-            .then((data) => setCountriesData(data))
-            .catch(error => {
-                console.log('error: ', error)
-            })
-        }, 350)
+        setFilteredCountries(filteredItems);
     }
 
     return (
@@ -32,7 +20,7 @@ export default function InputSearch({ search, setSearch, setCountriesData}) {
                 placeholder="Search for..."
                 className="w-full rounded-md border-gray-200 py-2.5 pe-10 p-2 shadow-sm sm:text-xl"
                 value={search}
-                onChange={handleChange}
+                onChange={handleInputChange}
             />
 
             <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
