@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 export default function Layout() {
     return (
         <>
-            <nav className="flex items-center justify-center gap-10">
+            <nav className="flex items-center justify-center gap-10 py-5 shadow-md">
                 <h1 className="text-slate-600 font-bold text-2xl">Where in the world</h1>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24">
