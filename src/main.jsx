@@ -7,6 +7,7 @@ import {
 import './index.css'
 import Layout from './components/Layout.jsx'
 import Index from './pages/Index.jsx';
+import Details from './pages/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Index />
+      },
+      {
+        path: '/details/:countryName',
+        element: <Details />
       },
     ]
   }

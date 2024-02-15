@@ -1,4 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
+
 export default function Card({ countries }) {
     const { population, region, capital } = countries
     const { svg, alt } = countries.flags
@@ -6,16 +8,15 @@ export default function Card({ countries }) {
     return (
         <div className="w-72 h-80 shadow-md py-2">
             <header className="h-1/2 w-full">
-                <a href="" title='View Details'>
+                <Link to={`/details/${countries.name.common}`} title='View Details'>
                     <LazyLoadImage
                         className="h-full w-full object-cover"
                         src={svg}
                         alt={alt} />
-                </a>
+                </Link>
             </header>
             <section className="p-5">
                 <h2 className="text-xl font-extrabold mb-3">{countries.name.common}</h2>
-
                 <p className="font-bold">Population: <span className="font-normal">{formattedNumberDefault}</span></p>
                 <p className="font-bold">Region: <span className="font-normal">{region}</span></p>
                 <p className="font-bold">Capital: <span className="font-normal">{capital}</span></p>
