@@ -29,6 +29,7 @@ export default function Index() {
 
     useEffect(() => {
         if (!region) return; //evitar que se ejecute la llamada si region no tiene nada
+        if(region === 'Select') return setFilteredCountries(countriesData)
         fetch(`https://restcountries.com/v3.1/region/${region}`)
             .then((response) => response.json())
             .then((data) => setFilteredCountries(data))

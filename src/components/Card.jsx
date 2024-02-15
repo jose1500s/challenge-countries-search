@@ -1,15 +1,17 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 export default function Card({ countries }) {
     const { population, region, capital } = countries
-    const {svg, alt} = countries.flags
+    const { svg, alt } = countries.flags
     const formattedNumberDefault = population.toLocaleString();
     return (
         <div className="w-72 h-80 shadow-md py-2">
             <header className="h-1/2 w-full">
-                <LazyLoadImage
-                    className="h-full w-full object-cover"
-                    src={svg}
-                    alt={alt} />
+                <a href="" title='View Details'>
+                    <LazyLoadImage
+                        className="h-full w-full object-cover"
+                        src={svg}
+                        alt={alt} />
+                </a>
             </header>
             <section className="p-5">
                 <h2 className="text-xl font-extrabold mb-3">{countries.name.common}</h2>
