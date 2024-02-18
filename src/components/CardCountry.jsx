@@ -4,7 +4,7 @@ export default function CardCountry({ data }) {
     const nativeName = Object.values(data.name.nativeName).find(name => name.common);
     const currencies = Object.values(data.currencies).map(currency => currency.name)
     const languages = Object.values(data.languages).map(language => language).join(', ')
-    console.log(data)
+
     return (
         <>
             <div className="flex items-center justify-center gap-10 w-full">
