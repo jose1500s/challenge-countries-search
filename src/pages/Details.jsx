@@ -21,7 +21,7 @@ export default function Details() {
 
 
     return (
-        <>
+        <div className="container-details">
             <button className="m-10 disabled:opacity-50 transition inline-flex items-center justify-center space-x-1.5 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:z-10 shrink-0 saturate-[110%] border-slate-300 focus:ring-slate-500 bg-white text-slate-900 hover:bg-slate-50 px-4 py-1.5 text-lg font-medium rounded-md"
                 onClick={() => navigate('/')}
             >
@@ -34,6 +34,6 @@ export default function Details() {
                     key={country.name.common}
                 />
             ))}
-        </>
+        </div>
     )
 }

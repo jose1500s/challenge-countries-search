@@ -50,7 +50,7 @@ export default function Index() {
                     countriesData={countriesData}
                 />
                 <div className="space-y-0.5 w-36 mr-12">
-                    <label htmlFor="basic" className="text-base font-medium text-slate-500">Filter by region</label>
+                    <label htmlFor="basic" className="text-base font-medium text-slate-500 dark:text-white">Filter by region</label>
                     <select id="basic" className="block w-full rounded-md p-1 text-lg transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-slate-200 disabled:opacity-75 truncate undefined border-slate-300"
                     onChange={handleSelect}
                     >

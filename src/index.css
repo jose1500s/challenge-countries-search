@@ -5,3 +5,8 @@
 body {
     font-family: "Nunito Sans", sans-serif;
 }
+
+.container-details {
+    height: calc(100vh - 72px);
+    width: 100vw;
+}
