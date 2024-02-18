@@ -7,8 +7,8 @@ export default function CardCountry({ data }) {
 
     return (
         <>
-            <div className="flex items-center justify-center gap-10 w-full">
-                <section className="h-full w-2/6">
+            <div className="flex  max-[640px]:flex-col max-[640px]:p-6 items-center justify-center gap-10 w-full">
+                <section className="h-full w-2/6 max-[640px]:w-full">
                     <img
                         className="h-full object-contain"
                         src={data.flags.svg}
@@ -39,7 +39,7 @@ export default function CardCountry({ data }) {
                                 >
                                     {border}
                                 </p>
-                            )) : <p className="text-slate-600 mt-2">No border countries</p>}
+                            )) : <p className="text-slate-600 mt-2 dark:text-white">No border countries</p>}
                         </div>
                     </div>
                 </section>
