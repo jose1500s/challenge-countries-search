@@ -15,7 +15,7 @@ export default function CardCountry({ data }) {
                         alt={data.flags.alt}
                     />
                 </section>
-                <section className="grid grid-cols-2 gap-x-10">
+                <section className="grid grid-cols-2 gap-x-10" id="asdas">
                     <div className="">
                         <h2 className="text-3xl font-bold py-1 dark:dark:text-white">{data.name.common}</h2>
                         <p className="font-bold text-lg py-1 dark:text-white">Native Name: <span className="font-normal">{nativeName ? nativeName.common : 'N/A'}</span></p>
